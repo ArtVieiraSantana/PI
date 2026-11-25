@@ -1,0 +1,66 @@
+digraph DER {
+    rankdir=LR;
+    node [shape=none, fontname="Helvetica"];
+
+    usuarios [label=<
+    <table border="1" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#1a1a2e"><font color="white"><b>usuarios</b></font></td></tr>
+      <tr><td align="left">PK id</td></tr>
+      <tr><td align="left">nome</td></tr>
+      <tr><td align="left">email (UQ)</td></tr>
+      <tr><td align="left">senha_hash</td></tr>
+      <tr><td align="left">perfil</td></tr>
+      <tr><td align="left">criado_em</td></tr>
+    </table>>];
+
+    pedidos [label=<
+    <table border="1" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#1a1a2e"><font color="white"><b>pedidos</b></font></td></tr>
+      <tr><td align="left">PK id</td></tr>
+      <tr><td align="left">numero_pedido (UQ)</td></tr>
+      <tr><td align="left">FK usuario_id</td></tr>
+      <tr><td align="left">status</td></tr>
+      <tr><td align="left">subtotal</td></tr>
+      <tr><td align="left">frete</td></tr>
+      <tr><td align="left">total</td></tr>
+      <tr><td align="left">forma_pagamento</td></tr>
+      <tr><td align="left">endereco_entrega</td></tr>
+    </table>>];
+
+    itens_pedido [label=<
+    <table border="1" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#1a1a2e"><font color="white"><b>itens_pedido</b></font></td></tr>
+      <tr><td align="left">PK id</td></tr>
+      <tr><td align="left">FK pedido_id</td></tr>
+      <tr><td align="left">FK produto_id</td></tr>
+      <tr><td align="left">quantidade</td></tr>
+      <tr><td align="left">preco_unitario</td></tr>
+      <tr><td align="left">subtotal</td></tr>
+    </table>>];
+
+    produtos [label=<
+    <table border="1" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#1a1a2e"><font color="white"><b>produtos</b></font></td></tr>
+      <tr><td align="left">PK id</td></tr>
+      <tr><td align="left">nome</td></tr>
+      <tr><td align="left">descricao</td></tr>
+      <tr><td align="left">preco</td></tr>
+      <tr><td align="left">estoque</td></tr>
+      <tr><td align="left">sku (UQ)</td></tr>
+      <tr><td align="left">ativo</td></tr>
+      <tr><td align="left">FK categoria_id</td></tr>
+    </table>>];
+
+    categorias [label=<
+    <table border="1" cellborder="1" cellspacing="0" cellpadding="6">
+      <tr><td bgcolor="#1a1a2e"><font color="white"><b>categorias</b></font></td></tr>
+      <tr><td align="left">PK id</td></tr>
+      <tr><td align="left">nome (UQ)</td></tr>
+      <tr><td align="left">slug (UQ)</td></tr>
+    </table>>];
+
+    usuarios -> pedidos [label="1..N", arrowhead=none];
+    pedidos -> itens_pedido [label="1..N", arrowhead=none];
+    produtos -> itens_pedido [label="1..N", arrowhead=none];
+    categorias -> produtos [label="1..N", arrowhead=none];
+}

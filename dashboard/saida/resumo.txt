@@ -1,0 +1,8 @@
+ZeroGrau Mobile - Resumo do Dashboard
+Gerado em: 03/10/2026 19:01
+----------------------------------------
+Total de pedidos:        6
+Faturamento total:       R$ 1,273.80
+Ticket médio:            R$ 212.30
+Unidades vendidas:       12
+Produtos no catálogo:    5

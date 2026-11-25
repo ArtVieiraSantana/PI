@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "ZeroGrau Mobile",
+    "slug": "zerograu-mobile",
+    "scheme": "zerograu",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.zerograu.mobile"
+    },
+    "ios": {
+      "bundleIdentifier": "com.zerograu.mobile"
+    }
+  }
+}
